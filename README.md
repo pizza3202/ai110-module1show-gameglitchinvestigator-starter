@@ -25,14 +25,25 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- Describe the game's purpose.
+A number guessing game where the player tries to guess a secret number within a limited number of attempts, with hints after each guess.
+- Detail which bugs you found.
+1. New Game button didn't reset game status or history, blocking further play
+2. Hints were inverted — too high said "Go Higher", too low said "Go Lower"
+3. Attempts count and history were displayed one step behind due to render order
+4. No validation for out-of-range inputs
+- Explain what fixes you applied.
+1. Added status and history resets to the New Game button
+2. Swapped the hint messages in check_guess
+3. Used st.empty() placeholder so attempts display renders after submit logic
+4. Added a range check after parse_guess to reject out-of-bound guesses
+
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
-
+- [Insert a screenshot of your fixed, winning game here]
+![alt text](image.png)
+![alt text](image-1.png)
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
